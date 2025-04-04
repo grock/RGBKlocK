@@ -13,41 +13,62 @@ RGBKlocK relies on [Lua](https://lua.org) and the [LÖVE 2D game framework](http
 Please refer to their documentation for proper installation on your system.
 
 # Run
-The script can be run the same way as any other LÖVE application, by calling the LÖVE executable with the root folder of the project as argument. Or by calling the love executable from the root folder of the project with the argument "./".
-Calling the program with no other argument will show the current time.
-The program accepts only one argument, and only two possible values:
-- "random_real" which replaces the current time with random numbers within the possible time ranges (From 00:00 to 23:59).
-- "random_all" which replaces the current time with random numbers without care if the time value actually makes sense or not (From 00:00 to 99:99).
-In both cases, new values are printed on screen every 2 seconds.
+The script can be run the same way as any other LÖVE application, by calling the LÖVE executable with the root folder of the project as argument. Or by calling the LÖVE executable from the root folder of the project with the argument "./".
 
 For more information, such as how to run the application on MacOS, iOS and Android, look at this page from the [LÖVE wiki](https://love2d.org/wiki/Getting_Started).
+
+## Arguments
+Calling the program with no other argument will show the current time.
+There is only one argument accepted by the program, and only two possible values:
+- "random_real" which replaces the current time with random numbers within the realistic time range (From 00:00 to 23:59).
+- "random_all" which replaces the current time with random numbers without care if the time value actually makes sense or not (From 00:00 to 99:99).
+
+The time value is updated every 2 seconds, meaning that the current time can be at most 2 seconds late compared to the system's time. In the case of random values, a new value will appear every two seconds.
 
 ## Windows
 The application will most likely work on Windows but I can't test it since I don't have any Windows installation to test it on.
 
-`code` cd "C:\game_folder"
-`code` "C:\Program Files\LOVE\love.exe" ./
+```Batchfile
+cd "C:\game_folder"
+"C:\Program Files\LOVE\love.exe" ./
+```
 or
-`code` "C:\Program Files\LOVE\love.exe" "C:\game_folder"
+```Batchfile
+"C:\Program Files\LOVE\love.exe" "C:\game_folder"
+```
 or
-`code` "C:\Program Files\LOVE\love.exe" "C:\game_folder" random_real
+```Batchfile
+"C:\Program Files\LOVE\love.exe" "C:\game_folder" random_real
+```
 or
-`code` "C:\Program Files\LOVE\love.exe" "C:\game_folder" random_all
+```Batchfile
+"C:\Program Files\LOVE\love.exe" "C:\game_folder" random_all
+```
 
 ## Linux
-`code` cd /home/you/game_folder/
-`code` love ./
+```Shell
+cd /home/you/game_folder/
+love ./
+```
 or
-`code` love /home/you/game_folder/
+```Shell
+love /home/you/game_folder/
+```
 or
-`code` love /home/you/game_folder/ random_real
+```Shell
+love /home/you/game_folder/ random_real
+```
 or
-`code` love /home/you/game_folder/ random_all
+```Shell
+love /home/you/game_folder/ random_all
+```
 
 # Build
 LÖVE applications can be built into a .love file, which is basically a .zip file containing all the necessary files.
 This is done by either using a GUI application for compressing files or by using a terminal command from the root directory of the application:
 
-`code` zip -9 -r RGBKlocK.love .
+```Shell
+zip -9 -r RGBKlocK.love .
+```
 
 Please refer to the [LÖVE wiki](https://love2d.org/wiki/Game_Distribution) for more information.
